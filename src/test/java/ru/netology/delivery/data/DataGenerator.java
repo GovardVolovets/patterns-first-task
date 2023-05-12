@@ -24,7 +24,8 @@ public class DataGenerator {
 
     public static String generateName(String locale) {
         Faker faker = new Faker(new Locale(locale));
-        return faker.name().fullName();
+        String name = faker.name().fullName();
+        return name.replace('Ё', 'Е').replace('ё', 'е');
     }
 
     public static String generatePhone(String locale) {
